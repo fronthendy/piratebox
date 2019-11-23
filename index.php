@@ -1,7 +1,7 @@
 <?php require_once('header.php'); ?>
 <main>
   <div class="container my-5">
-    <h3>Produtos</h3>
+    <h3>Produtos <a href="criar.php" class="btn btn-primary">Adicionar novo</a></h3>
     <table class="table">
       <thead>
         <tr>
@@ -13,14 +13,21 @@
         </tr>
       </thead>
       <tbody>
-        <tr>
-          <td>Halloween box</td>
-          <td>R$45,00</td>
-          <td>Temática</td>
-          <td>Ativo</td>
-          <td></td>
-        </tr>
-        <?php getProdutos(); ?>
+        <?php
+        foreach (getProdutos() as $produto) {
+          echo "<tr>";
+          echo "<td>$produto[nome]</td>";
+          echo "<td>$produto[preco]</td>";
+          echo "<td>$produto[categoria_id]</td>";
+          echo "<td>$produto[status]</td>";
+          echo "<td>
+          <a href='editar.php?id=$produto[id]' class='btn btn-secondary'>editar</a>
+          <a href='excluir.php?id=$produto[id]' class='btn btn-danger'>excluir</a>
+          </td>";
+          echo "</tr>";
+        }
+
+        ?>
       </tbody>
     </table>
   </div>

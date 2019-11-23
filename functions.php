@@ -1,14 +1,9 @@
 <?php
 include_once('database.php');
 
-// echo "entrei no functions";
-// var_dump($connection);
-
 $usuarios = $connection->query('SELECT * FROM usuario');
 $usuarios = $usuarios->fetchAll();
 
-// echo "<pre>";
-// var_dump($usuarios);
 
 if (isset($_POST['action']) && $_POST['action'] == 'login') {
   var_dump($_POST);
@@ -32,12 +27,19 @@ if (isset($_POST['action']) && $_POST['action'] == 'login') {
   }
 }
 
-
 function getProdutos()
 {
   global $connection;
-
   $produtos = $connection->query('SELECT * FROM produto');
-  $produtos = $produtos->fetchAll();
+  $produtos = $produtos->fetchAll(PDO::FETCH_ASSOC);
+
   return $produtos;
+}
+function getCategorias()
+{
+  global $connection;
+  $categorias = $connection->query('SELECT * FROM categoria');
+  $categorias = $categorias->fetchAll(PDO::FETCH_ASSOC);
+
+  return $categorias;
 }
