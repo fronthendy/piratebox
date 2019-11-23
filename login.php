@@ -7,14 +7,14 @@
         <form method="POST" class="my-5">
           <div class="form-group">
             <label for="email">email</label>
-            <input type="email" name="email" id="email" class="form-control">
+            <input type="email" name="email" id="email" class="form-control" required>
           </div>
           <div class="form-group">
             <label for="senha">senha</label>
-            <input type="password" name="senha" id="senha" class="form-control">
+            <input type="password" name="senha" id="senha" class="form-control" required>
           </div>
           <div class="form-group">
-            <button class="btn btn-primary">Entrar</button>
+            <button class="btn btn-primary" name="action" value="login">Entrar</button>
           </div>
         </form>
       </div>

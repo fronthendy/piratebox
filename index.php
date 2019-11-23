@@ -20,6 +20,7 @@
           <td>Ativo</td>
           <td></td>
         </tr>
+        <?php getProdutos(); ?>
       </tbody>
     </table>
   </div>
