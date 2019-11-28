@@ -19,14 +19,13 @@
           echo "<td>$produto[nome]</td>";
           echo "<td>$produto[preco]</td>";
           echo "<td>$produto[categoria_id]</td>";
-          echo "<td>$produto[status]</td>";
+          echo "<td>" . ($produto['status'] == 1 ? 'ativo' : 'inativo') . "</td>";
           echo "<td>
-          <a href='editar.php?produto_id=$produto[id]' class='btn btn-secondary'>editar</a>
-          <a href='deletar.php?produto_id=$produto[id]' class='btn btn-danger'>excluir</a>
-          </td>";
+            <a href='editar.php?produto_id=$produto[id]' class='btn btn-secondary'>editar</a>
+            <a href='desativar.php?produto_id=$produto[id]' class='btn btn-danger'>desativar</a>
+            </td>";
           echo "</tr>";
         }
-
         ?>
       </tbody>
     </table>

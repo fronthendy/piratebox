@@ -101,13 +101,14 @@ if (isset($_POST['action']) && $_POST['action'] == 'editar-produto') {
   }
 }
 
-if (isset($_POST['deletar_produto'])) {
+if (isset($_POST['desativar_produto'])) {
   if (isset($_POST['produto_id']) && $_POST['produto_id'] != "") {
-    $query = $connection->prepare("DELETE FROM produto WHERE id = :id;");
+    $query = $connection->prepare("UPDATE produto SET status = 0 WHERE id = :id");
     $produtoEditado = $query->execute([
       ":id" => $_POST['produto_id']
     ]);
-    echo "<p class='alert alert-success'>produto deletado com sucesso</p>";
+    // header('location: index.php');
+    var_dump($produtoEditado);
   } else {
     echo "<p class='alert alert-danger'>Preencha os campos corretamente!</p>";
   }

@@ -5,8 +5,8 @@ include_once('header.php');
   <?php $produto = getProduto(); ?>
 
 
-  <form action="index.php" method="post" class="col-6">
-    <legend>Excluir produto</legend>
+  <form method="post" class="col-6">
+    <legend>Desativar produto</legend>
     <input type="hidden" name="produto_id" readonly value="<?= $produto['id'] ?>">
     <div class="form-group">
       <label for="nome">nome</label>
@@ -35,7 +35,7 @@ include_once('header.php');
         ?>
       </select>
     </div>
-    <button name="deletar_produto" class="btn btn-danger">Excluir</button>
+    <button name="desativar_produto" class="btn btn-danger">Desativar</button>
     <a href="index.php" class="btn btn-default">Voltar para lista</a>
   </form>
 </div>
