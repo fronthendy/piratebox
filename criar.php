@@ -4,7 +4,7 @@
     <div class="row">
       <div class="col-6">
         <h3>Cadastrar novo produto</h3>
-        <form>
+        <form method="post">
           <div class="form-group">
             <label for="nome">nome</label>
             <input type="text" name="nome" id="nome" class="form-control">
@@ -18,8 +18,8 @@
             <input type="text" name="preco" id="preco" class="form-control">
           </div>
           <div class="form-group">
-            <label for="preco">Categoria</label>
-            <select name="preco" id="preco" class="form-control">
+            <label for="categoria_id">Categoria</label>
+            <select name="categoria_id" id="categoria_id" class="form-control">
               <option selected disabled>Escolha uma opção</option>
               <?php
               foreach (getCategorias() as $categoria) {
@@ -31,6 +31,13 @@
           <div class="form-group">
             <button class="btn btn-primary" name="action" value="cadastrar-produto">Enviar</button>
           </div>
+          <?php
+          if (isset($erro)) {
+            echo "<div class='alert alert-danger'>";
+            echo "<p class='m-0'>$erro</p>";
+            echo "</div>";
+          }
+          ?>
         </form>
       </div>
     </div>

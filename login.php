@@ -16,6 +16,13 @@
           <div class="form-group">
             <button class="btn btn-primary" name="action" value="login">Entrar</button>
           </div>
+          <?php
+          if (isset($erro)) {
+            echo "<div class='alert alert-danger'>";
+            echo "<p class='m-0'>$erro</p>";
+            echo "</div>";
+          }
+          ?>
         </form>
       </div>
     </div>

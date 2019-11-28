@@ -21,8 +21,8 @@
           echo "<td>$produto[categoria_id]</td>";
           echo "<td>$produto[status]</td>";
           echo "<td>
-          <a href='editar.php?id=$produto[id]' class='btn btn-secondary'>editar</a>
-          <a href='excluir.php?id=$produto[id]' class='btn btn-danger'>excluir</a>
+          <a href='editar.php?produto_id=$produto[id]' class='btn btn-secondary'>editar</a>
+          <a href='deletar.php?produto_id=$produto[id]' class='btn btn-danger'>excluir</a>
           </td>";
           echo "</tr>";
         }
