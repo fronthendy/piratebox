@@ -17,6 +17,8 @@
             <button class="btn btn-primary" name="action" value="login">Entrar</button>
           </div>
           <?php
+
+          //caso tenha erro, exibir mensagem em um alert
           if (isset($erro)) {
             echo "<div class='alert alert-danger'>";
             echo "<p class='m-0'>$erro</p>";

@@ -25,6 +25,8 @@
             <select name="categoria_id" id="categoria_id" class="form-control" value="<?= $produto['categoria_id'] ?>">
               <option selected disabled>Escolha uma opção</option>
               <?php
+
+              //select com categorias cadastrados no banco de dados
               foreach (getCategorias() as $categoria) {
                 if ($categoria['id'] == $produto['categoria_id']) {
                   echo "<option value='$categoria[id]' selected>$categoria[nome]</option>";
@@ -39,6 +41,8 @@
             <button class="btn btn-primary" name="action" value="editar-produto">Enviar</button>
           </div>
           <?php
+
+          // caso tenha erro exibe um alert
           if (isset($erro)) {
             echo "<div class='alert alert-danger'>";
             echo "<p class='m-0'>$erro</p>";

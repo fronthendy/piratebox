@@ -2,7 +2,7 @@
 include_once('header.php');
 ?>
 <div class="container">
-  <?php $produto = getProduto(); ?>
+  <?php $produto = getProduto(); // traz produto de acordo com id passado no $_GET?>
 
 
   <form method="post" class="col-6">
@@ -25,6 +25,8 @@ include_once('header.php');
       <select name="categoria_id" id="categoria_id" readonly class="form-control" value="<?= $produto['categoria_id'] ?>">
         <option selected disabled>Escolha uma opção</option>
         <?php
+
+        // preenche select do formulario com categorias cadastrados no banco de dados
         foreach (getCategorias() as $categoria) {
           if ($categoria['id'] == $produto['categoria_id']) {
             echo "<option value='$categoria[id]' selected>$categoria[nome]</option>";

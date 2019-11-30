@@ -22,6 +22,7 @@
             <select name="categoria_id" id="categoria_id" class="form-control">
               <option selected disabled>Escolha uma opção</option>
               <?php
+              // traz categorias cadastrados no banco de dados 
               foreach (getCategorias() as $categoria) {
                 echo "<option value='$categoria[id]'>$categoria[nome]</option>";
               }
@@ -32,6 +33,8 @@
             <button class="btn btn-primary" name="action" value="cadastrar-produto">Enviar</button>
           </div>
           <?php
+
+          // exibe mensagem de erro
           if (isset($erro)) {
             echo "<div class='alert alert-danger'>";
             echo "<p class='m-0'>$erro</p>";
